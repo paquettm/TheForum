@@ -6,23 +6,35 @@
 </head>
 
 <body>
-<?php
-if(isset($_GET['error'])){
-?>
-<div class="alert alert-danger" role="alert">
-	<?=$_GET['error']?>
-</div>
-<?php
-}
-?>
+	<div class="container">
+		<h1>Instructions</h1>
+		<p class="lead">To add a new post, enter the author name or email, the message, as well as a modification password and modification password confirmation (same password). Click "Add Post" to save the new post.</p>
+		<?php
+		if(isset($_GET['error'])){
+		?>
+		<div class="alert alert-danger" role="alert">
+			<?=$_GET['error']?>
+		</div>
+		<?php
+		}
+		?>
 
-<form action='' method='post'>
-	<label>Author:<input type="text" name="author" /></label><br>
-	<label>Message:<textarea name='message'></textarea></label><br>
-	<label>Password:<input type="password" name="password" /></label><br>
-	<label>Password confirmation:<input type="password" name="password_confirm" /></label><br>
-	<input type="submit" name="action" value="Add Message" />
-</form>
-
+		<form action='' method='post'>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Author:<input class='form-control' type="text" name="author" placeholder="author name or email"/></label>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Message:<textarea class='form-control' name='message' placeholder="Message"></textarea></label>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Modification password:<input class='form-control' type="password" name="password" placeholder="Password" /></label>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Modification password confirmation:<input class='form-control' type="password" name="password_confirm" placeholder="Password confirmation" /></label>
+			</div>
+			<input class='btn btn-primary' type="submit" name="action" value="Add Post" />
+		</form>
+		<a href='/Main/index' class='btn btn-secondary'>Cancel</a>
+	</div>
 </body>
 </html>

@@ -55,7 +55,7 @@ class Main extends \app\core\Controller{
 				header("location:/Main/delete/$post_id?error=Wrong password provided");
 			}
 		}else{
-			$this->view('Post/delete/', $post);
+			$this->view('Post/delete', $post);
 		}
 	}
 }

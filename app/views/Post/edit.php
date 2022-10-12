@@ -6,22 +6,32 @@
 </head>
 
 <body>
-<?php
-if(isset($_GET['error'])){
-?>
-<div class="alert alert-danger" role="alert">
-	<?=$_GET['error']?>
-</div>
-<?php
-}
-?>
-Modify the Author and Message as needed and provide the existing password to save the changes.
-<form action='' method='post'>
-	<label>Author:<input type="text" name="author" value='<?=$data->author ?>' /></label><br>
-	<label>Message:<textarea name='message'><?=$data->message ?></textarea></label><br>
-	<label>Password:<input type="password" name="password" /></label><br>
-	<input type="submit" name="action" value="Edit the Message" />
-</form>
+	<div class="container">
 
+		<?php
+		if(isset($_GET['error'])){
+		?>
+		<div class="alert alert-danger" role="alert">
+			<?=$_GET['error']?>
+		</div>
+		<?php
+		}
+		?>
+		<h1>Instructions</h1>
+		<p class="lead">To modify a post, modify the Author and Message as needed and provide the Modification password as it was set for this post at the time of its creation. Click "Edit the Post" to save the changes. Click "Cancel" if you no longer wish to edit this post.</p>
+		<form action='' method='post'>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Author:<input class='form-control' type="text" name="author" value='<?=$data->author ?>' /></label>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Message:<textarea class='form-control' name='message'><?=$data->message ?></textarea></label>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 col-form-label">Modification password:<input class='form-control' type="password" name="password" /></label>
+			</div>
+			<input class='btn btn-primary' type="submit" name="action" value="Edit the Post" />
+		</form>
+		<a href='/Main/index' class='btn btn-secondary'>Cancel</a>
+	</div>
 </body>
 </html>
