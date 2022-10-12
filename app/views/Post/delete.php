@@ -30,7 +30,7 @@
 			</div>
 			<input class='btn btn-danger' type="submit" name="action" value="Delete the Post" />
 		</form>
-		<a href='/Main/index' class='btn btn-secondary'>Cancel</a>
+		<a href='/Post/index' class='btn btn-secondary'>Cancel</a>
 	</div>
 </body>
 </html>

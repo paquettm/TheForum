@@ -31,7 +31,7 @@
 			</div>
 			<input class='btn btn-primary' type="submit" name="action" value="Edit the Post" />
 		</form>
-		<a href='/Main/index' class='btn btn-secondary'>Cancel</a>
+		<a href='/Post/index' class='btn btn-secondary'>Cancel</a>
 	</div>
 </body>
 </html>

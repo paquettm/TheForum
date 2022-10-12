@@ -18,7 +18,7 @@
 		?>
 		<h1>Password-Protected Public Posts</h1>
 		<p class="lead">To add a new post, click "Add your new post". To edit your post, click "edit" next to your post. To delete your post, click "delete" next to your post.</p>
-		<a href='/Main/add' class='btn btn-primary'>Add your new post</a><br>
+		<a href='/Post/add' class='btn btn-primary'>Add your new post</a><br>
 
 		<table class='table'>
 			<tr><th>Post</th><th>action</th></tr>
@@ -27,8 +27,8 @@
 				echo "<td><em>$item->author</em> wrote:<br>
 					$item->message</td>
 					<td>
-						<a href='/Main/edit/$item->post_id' class='btn btn-secondary'>edit</a>
-						<a href='/Main/delete/$item->post_id' class='btn btn-danger'>delete</a>
+						<a href='/Post/edit/$item->post_id' class='btn btn-secondary'>edit</a>
+						<a href='/Post/delete/$item->post_id' class='btn btn-danger'>delete</a>
 					</td>
 				</tr>";
 

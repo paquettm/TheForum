@@ -1,7 +1,7 @@
 <?php
 namespace app\controllers;
 
-class Main extends \app\core\Controller{
+class Post extends \app\core\Controller{
 	public function index(){
 		$post = new \app\models\Post();
 		$posts = $post->getAll();
@@ -16,9 +16,9 @@ class Main extends \app\core\Controller{
 				$post->message = $_POST['message'];
 				$post->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 				$post->insert();
-				header('location:/Main/index');
+				header('location:/Post/index');
 			}else{
-				header("location:/Main/add/?error=Passwords don't match");
+				header("location:/Post/add/?error=Passwords don't match");
 			}
 		}else{
 			$this->view('Post/add');
@@ -34,9 +34,9 @@ class Main extends \app\core\Controller{
 				$post->author = $_POST['author'];
 				$post->message = $_POST['message'];
 				$post->update();
-				header('location:/Main/index');
+				header('location:/Post/index');
 			}else{
-				header("location:/Main/edit/$post_id?error=Wrong password provided");
+				header("location:/Post/edit/$post_id?error=Wrong password provided");
 			}
 		}else{
 			$this->view('Post/edit', $post);
@@ -50,9 +50,9 @@ class Main extends \app\core\Controller{
 			//authenticate
 			if(password_verify($_POST['password'], $post->password_hash)){
 				$post->delete();
-				header('location:/Main/index');
+				header('location:/Post/index');
 			}else{
-				header("location:/Main/delete/$post_id?error=Wrong password provided");
+				header("location:/Post/delete/$post_id?error=Wrong password provided");
 			}
 		}else{
 			$this->view('Post/delete', $post);

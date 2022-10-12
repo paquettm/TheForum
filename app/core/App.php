@@ -2,7 +2,7 @@
 namespace app\core;
 
 class App{
-	private $controller = 'Main';
+	private $controller = 'Post';
 	private $method = 'index';
 
 	public function __construct(){
